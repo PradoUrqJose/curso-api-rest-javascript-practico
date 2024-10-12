@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiMovies</title>
+    <link rel="stylesheet" href="styles/app.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@700;800&amp;family=Red+Hat+Display:wght@400;500&amp;display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo_bg">NEW</div>
+            <div class="logo_txt">MOVIE</div>
+        </div>
+    
+        <!-- Icono de hamburguesa -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <!-- Menú de navegación -->
+        <nav class="nav" id="nav">
+            <a href="#" class="nav_item">Home<div class="navBar"></div></a>
+            <a href="#" class="nav_item">About<div class="navBar"></div></a>
+            <a href="#" class="nav_item">Services<div class="navBar"></div></a>
+            <a href="#" class="nav_item">Contact<div class="navBar"></div></a>
+        </nav>
+    </header>
+    <section class="banner_section">
+        <div class="banner_div">
+            <h1 class="banner_title"></h1>
+            <div class="banner_features">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/1200px-IMDB_Logo_2016.png"
+                    alt="logo imdb" class="logo_imdb" height="auto">
+                <p class="ratings"><i class="fa-solid fa-star"></i></p>
+                <p>|</p>
+                <p class="year"></p>
+                <p>|</p>
+                <p class="duration">1 hour 55 minutes</p>
+            </div>
+            <div class="banner_description">
+            </div>
+            <div class="banner_buttons">
+                <a href="#" class="button_trailer"><i class="fa-solid fa-play-circle"></i> Watch Trailer</a>
+                <a href="#" class="button_movie"><i class="fa-solid fa-play"></i> Watch Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="poster_section">
+        <div class="buttons_section_scroll">
+            <button class="scroll-left"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="scroll-right"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+
+        <div class="poster_div"></div>
+    </section>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/7b65e1398f.js" crossorigin="anonymous"></script>
+    <script src="src/secret.js"></script>
+    <script src="src/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,480 @@
+/* GENERAL RESET: Elimina márgenes y rellenos predeterminados para todos los elementos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* VARIABLES: Define colores y tipografías utilizadas en el diseño */
+:root {
+    --yellow: #f5c61c;
+    --black: #000;
+
+    --font-family-titles: 'Dosis', sans-serif;
+    --font-family-text: 'Red Hat Display', sans-serif;
+    --font-weight-title1: 800;
+    --font-weight-title2: 700;
+    --font-weight-text1: 400;
+    --font-weight-text2: 500;
+}
+
+/* GLOBAL: Establece altura completa para html y body */
+html, body {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    font-family: var(--font-family-text);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: overlay;
+    transition: all 1s ease-in-out;
+}
+
+/* TITLES: Definición de estilos para títulos */
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-titles);
+    font-weight: var(--font-weight-text1);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER: Diseño del encabezado que incluye logo y menú de navegación */
+.header {
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+}
+
+.header .logo {
+    display: flex;
+}
+
+/* Estilos para el logo en la cabecera */
+.header .logo div {
+    padding: 2px 10px;
+    border-radius: .3rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.header .logo .logo_bg {
+    background-color: var(--yellow);
+    height: 27px;
+}
+
+.header .logo .logo_txt {
+    color: var(--yellow);
+}
+
+/* HAMBURGER MENU: Menú desplegable para móviles */
+.hamburger {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger .bar {
+    margin: 5px;
+    border-radius: 10px;
+    height: 3px;
+    width: 81%;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Animación del menú hamburguesa al abrir */
+.hamburger.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* NAVIGATION: Diseño del menú de navegación */
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav_item {
+    padding: 0 20px;
+    font-size: 17px;
+    font-weight: lighter;
+    color: white;
+}
+
+/* Barra animada debajo del elemento de menú al hacer hover */
+.navBar {
+    margin-top: 10px;
+    border-radius: 40px;
+    width: 0%;
+    height: 3px;
+    background-color: white;
+    transition: width .3s ease-in-out;
+}
+
+.nav_item:hover .navBar {
+    width: 100%;
+}
+
+/* ICON: Estilo para el icono de búsqueda */
+.fa-magnifying-glass {
+    color: white;
+    font-weight: lighter;
+    padding-left: 1.5rem;
+}
+
+/* MAIN INFO: Sección principal con título, descripción y botones */
+.banner_section {
+    width: 100%;
+    height: 50%;
+    margin: 0;
+}
+
+.banner_div {
+    width: 50%;
+    height: 100%;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.banner_title {
+    color: white;
+    font-weight: lighter;
+    font-size: 3.8rem;
+}
+
+.banner_features {
+    display: flex;
+    gap: 20px;
+    color: rgba(136, 136, 136, 0.871);
+    font-size: .9rem;
+}
+
+.logo_imdb {
+    width: 34px;
+}
+
+/* Descripción dentro del banner con límite de altura para texto largo */
+.banner_description {
+    color: white;
+    font-size: .96rem;
+    max-width: 70%;
+    min-height: 5rem;
+    overflow: hidden;
+}
+
+/* BOTONES del banner (ver película o trailer) */
+.banner_buttons {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.banner_buttons a {
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos para botón de "Trailer" */
+.button_trailer {
+    border: 2px solid white;
+    color: white;
+}
+
+.button_trailer:hover {
+    background-color: white;
+    color: var(--black);
+}
+
+/* Estilos para botón de "Ver Película" */
+.button_movie {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.button_movie:hover {
+    background-color: var(--black);
+    color: var(--yellow);
+}
+
+/* POSTER: Galería de imágenes de posters */
+.poster_section {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 2rem 4rem;
+}
+
+
+
+.poster_div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 85%;
+}
+
+/* Scrollbar oculto */
+.poster_div::-webkit-scrollbar {
+    display: block;
+}
+
+/* Estilos para las imágenes de los posters */
+.poster_item img {
+    width: 6rem;
+    border-radius: 1rem;
+    filter: brightness(30%);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.poster_item img:hover {
+    filter: brightness(100%);
+    transform: scale(130%);
+}
+
+/* Botón "Más" para mostrar más posters */
+.more-button {
+    background-color: transparent;
+    border: none;
+    color: var(--yellow);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.more-button:hover {
+    color: white;
+}
+
+/* BOTONES DE SCROLL: Botones para desplazarse por la galería */
+.scroll-left,
+.scroll-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.184);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: .51rem;
+    font-size: 18px;
+    border: 2px solid white;
+}
+
+.buttons_section_scroll {
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+    width: 100%;
+    padding: 0px 5px;
+    height: 15%;
+}
+
+/* Hover para los botones de scroll */
+.scroll-left:hover,
+.scroll-right:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* MEDIA QUERIES */
+
+/* Estilos para dispositivos pequeños (móviles) */
+@media (max-width: 768px) {
+    .header {
+        padding: 3rem 2rem;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 100;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        position: absolute;
+        top: 0;
+        right: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 100vh;
+        padding: 1rem;
+        text-align: center;
+        transition: right .4s ease-in-out;
+        z-index: 90;
+    }
+
+    .nav.open {
+        right: 0%;
+    }
+
+    /* Ajustes para el banner y sección de posters en móviles */
+    .banner_section {
+        height: 50%;
+    }
+
+    .banner_div {
+        width: 100%;
+        padding: 0rem 1rem;
+        gap: 10px;
+    }
+
+    .poster_section {
+        height: 38%;
+        padding: 0rem 1rem;
+    }
+
+    .poster_item img {
+        width: 5.8rem;
+    }
+
+    .buttons_section_scroll {
+        display: none;
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 769px) and (max-width: 1380px) {
+    .header {
+        padding: 3rem 4rem;
+    }
+
+    .banner_section {
+        height: 50%;
+    }
+
+    .banner_div {
+        width: 90%;
+        padding: 0rem 4rem;
+    }
+
+    .poster_section {
+        height: 35%;
+        padding: 0rem 4rem;
+    }
+
+    .poster_item img {
+        width: 6rem;
+    }
+
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1025px) {
+    .banner_section {
+        height: 55%;
+    }
+
+    .poster_section {
+        height: 30%;
+        padding: 0rem 3rem;
+    }
+}
+
+/* MEDIA QUERY: Estilos solo para celulares (pantallas de hasta 480px) */
+@media (max-width: 480px) {
+    .header {
+        padding: 2rem 1rem;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 100;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        position: absolute;
+        top: 0;
+        right: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 100vh;
+        padding: 1rem;
+        text-align: center;
+        transition: right .4s ease-in-out;
+        z-index: 90;
+    }
+
+    .nav.open {
+        right: 0%;
+    }
+
+    /* Ajustes para el banner en celulares */
+    .banner_section {
+        height: 55%;
+    }
+
+    .banner_div {
+        width: 100%;
+        padding: 0rem 1rem;
+        gap: 10px;
+    }
+
+    .banner_description {
+        max-width: 100%;
+    }
+    .banner_title {
+        font-size: 2.8rem;
+    }
+
+    .banner_buttons a {
+        padding: 10px 30px;
+        border-radius: 30px;
+        font-size: 14px;
+    }
+
+    .poster_section {
+        height: 35%;
+        padding: 0rem 1rem;
+    }
+
+    .poster_item img {
+        width: 5rem;
+    }
+
+    .buttons_section_scroll {
+        display: none;
+    }
+}
